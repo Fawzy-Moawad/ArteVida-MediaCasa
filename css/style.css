@@ -66,7 +66,7 @@ h6 {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 100%;
   transition: all ease-in-out 0.5s;
   z-index: 9997;
   transition: all 0.5s;
@@ -74,28 +74,43 @@ h6 {
   overflow-y: auto;
 }
 
-#header .profile img {
-  margin: 15px auto;
-  display: block;
-  width: 120px;
-  border: 8px solid #2c2f3f;
-}
-
 #header .profile h1 {
-  font-size: 24px;
-  margin: 0;
-  padding: 0;
-  font-weight: 600;
-  -moz-text-align-last: center;
-  text-align-last: center;
-  font-family: "Poppins", sans-serif;
+  font-size: 80px; /* Set the desired larger font size for the entire h1 */
+  color: red; /* Set the text color to red */
+  margin: 20px 0; /* Add some margin to create space */
+  position: relative; /* Set position to relative for positioning the white square */
+  display: inline-block; /* Make the h1 an inline-block to only take the width of its content */
+  line-height: 1.5; /* Adjust the line height for vertical spacing */
+  padding-bottom: 0; /* Adjust the padding at the bottom for additional space */
+  
 }
 
-#header .profile h1 a,
-#header .profile h1 a:hover {
-  color: #fff;
-  text-decoration: none;
+#header .profile h1 .span-1 {
+  font-size: 100px;
+  color: black; /* Set the text color to black */
+  letter-spacing: -3px;
 }
+
+#header .profile h1 .span-2 {
+  font-size: 100px;
+  color: black; /* Set the text color to black */
+  letter-spacing: -5px;
+}
+
+
+#header .profile h1::before {
+  content: ''; /* Create a pseudo-element to represent the white square */
+  display: block;
+  width: 100%; /* Set the width to 120% of the parent element */
+  height: 120px; /* Set the height to a fixed value (adjust as needed) */
+  background-color: rgba(255, 255, 255, 0.8); /* Set the background color to semi-transparent white */
+  position: absolute; /* Set position to absolute for precise placement */
+  bottom: 0; /* Align the bottom edge with the h1 element */
+  left: 0; /* Align the left edge with the parent element */
+  z-index: -1; /* Send the white square to the back, allowing the h1 text to be visible */
+  
+}
+
 
 #header .profile .social-links a {
   font-size: 18px;
@@ -110,6 +125,7 @@ h6 {
   width: 36px;
   height: 36px;
   transition: 0.3s;
+  float: left;
 }
 
 #header .profile .social-links a:hover {
@@ -143,6 +159,19 @@ h6 {
     padding-right: 12px;
   }
 }
+
+/* Adjust styles for smaller screens (mobile devices) */
+@media (max-width: 767px) {
+  #header .profile h1 {
+    font-size: 28px; /* Adjust font size for smaller screens */
+  }
+
+  #header .profile h1 .span-1,
+  #header .profile h1 .span-2 {
+    font-size: 48px; /* Adjust font size for smaller screens */
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Navigation Menu
