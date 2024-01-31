@@ -1,10 +1,3 @@
-/**
-* Template Name: iPortfolio
-* Updated: Nov 17 2023 with Bootstrap v5.3.2
-* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 (function() {
   "use strict";
 
@@ -44,22 +37,22 @@
   /**
    * Navbar links active state on scroll
    */
-  let navbarlinks = select('#navbar .scrollto', true);
+  let navbarlinks = select('#navbar .scrollto', true)
   const navbarlinksActive = () => {
-    let position = window.scrollY + 200;
+    let position = window.scrollY + 200
     navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return;
-      let section = select(navbarlink.hash);
-      if (!section) return;
+      if (!navbarlink.hash) return
+      let section = select(navbarlink.hash)
+      if (!section) return
       if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        navbarlink.classList.add('active');
+        navbarlink.classList.add('active')
       } else {
-        navbarlink.classList.remove('active');
+        navbarlink.classList.remove('active')
       }
-    });
-  };
-  window.addEventListener('load', navbarlinksActive);
-  onscroll(document, navbarlinksActive);
+    })
+  }
+  window.addEventListener('load', navbarlinksActive)
+  onscroll(document, navbarlinksActive)
 
   /**
    * Scrolls to an element with header offset
@@ -92,28 +85,28 @@
    * Mobile nav toggle
    */
   on('click', '.mobile-nav-toggle', function(e) {
-    select('body').classList.toggle('mobile-nav-active');
-    this.classList.toggle('bi-list');
-    this.classList.toggle('bi-x');
-  });
+    select('body').classList.toggle('mobile-nav-active')
+    this.classList.toggle('bi-list')
+    this.classList.toggle('bi-x')
+  })
 
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
   on('click', '.scrollto', function(e) {
     if (select(this.hash)) {
-      e.preventDefault();
+      e.preventDefault()
 
-      let body = select('body');
+      let body = select('body')
       if (body.classList.contains('mobile-nav-active')) {
-        body.classList.remove('mobile-nav-active');
-        let navbarToggle = select('.mobile-nav-toggle');
-        navbarToggle.classList.toggle('bi-list');
-        navbarToggle.classList.toggle('bi-x');
+        body.classList.remove('mobile-nav-active')
+        let navbarToggle = select('.mobile-nav-toggle')
+        navbarToggle.classList.toggle('bi-list')
+        navbarToggle.classList.toggle('bi-x')
       }
-      scrollto(this.hash);
+      scrollto(this.hash)
     }
-  }, true);
+  }, true)
 
   /**
    * Scroll with ofset on page load with hash links in the url
@@ -121,7 +114,7 @@
   window.addEventListener('load', () => {
     if (window.location.hash) {
       if (select(window.location.hash)) {
-        scrollto(window.location.hash);
+        scrollto(window.location.hash)
       }
     }
   });
@@ -242,65 +235,43 @@
     }
   });
 
-    /**
+  /**
    * Animation on scroll
    */
-    window.addEventListener('load', () => {
-      AOS.init({
-        duration: 1000,
-        easing: 'ease-in-out',
-        once: true,
-        mirror: false
-      });
-    });
-  
-    /**
-     * Initiate Pure Counter
-     */
-    new PureCounter();
-  
-    /**
-     * Additional styles for transparency and full-width image
-     */
-    const navMenu = select('#navbar');
-    const heroSection = select('.hero');
-    
-    if (navMenu && heroSection) {
-      onscroll(document, () => {
-        let scrollPos = window.scrollY;
-        if (scrollPos > 100) {
-          // Adjust the transparency of the nav menu when scrolling
-          navMenu.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-        } else {
-          navMenu.style.backgroundColor = 'transparent';
-        }
-  
-        // Make the hero section full-width
-        heroSection.style.backgroundSize = 'cover';
-        heroSection.style.backgroundPosition = 'center';
-      });
-    }
-  
-  })();
+  window.addEventListener('load', () => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    })
+  });
 
-   // Additional styles for transparency and full-width image
-   const navMenu = select('#navbar');
-   const heroSection = select('.hero');
-   
-   if (navMenu && heroSection) {
-     onscroll(document, () => {
-       let scrollPos = window.scrollY;
-       if (scrollPos > 100) {
-         // Adjust the transparency of the nav menu when scrolling
-         navMenu.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-       } else {
-         navMenu.style.backgroundColor = 'transparent';
-       }
- 
-       // Make the hero section full-width
-       heroSection.style.backgroundSize = 'cover';
-       heroSection.style.backgroundPosition = 'center';
-     });
-   }
- 
- })();
+  /**
+   * Initiate Pure Counter 
+   */
+  new PureCounter();
+
+  /**
+   * Additional styles for transparency and full-width image
+   */
+  const navMenu = select('#navbar');
+  const heroSection = select('.hero');
+
+  if (navMenu && heroSection) {
+    onscroll(document, () => {
+      let scrollPos = window.scrollY;
+      if (scrollPos > 100) {
+        // Adjust the transparency of the nav menu when scrolling
+        navMenu.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+      } else {
+        navMenu.style.backgroundColor = 'transparent';
+      }
+
+      // Make the hero section full-width
+      heroSection.style.backgroundSize = 'cover';
+      heroSection.style.backgroundPosition = 'center';
+    });
+  }
+
+})();
