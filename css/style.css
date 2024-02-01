@@ -93,7 +93,7 @@ h6 {
   .button {
     position: relative;
     top: 50%;
-    width: 74px;
+    width: 90px;
     height: 36px;
     margin-left: 15px;
     overflow: hidden;
@@ -159,7 +159,7 @@ h6 {
   
   #button-16 .checkbox:checked + .knobs:before {
     content: "ENG";
-    left: 42px;
+    left: 55px;
     background-color: #0667FE;
   }
   
@@ -183,31 +183,21 @@ h6 {
 }
 
 #header .profile h1 {
-  font-size: 80px; /* Set the desired larger font size for the entire h1 */
-  color: red; /* Set the text color to red */
+  font-size: 100px; /* Set the desired larger font size for the entire h1 */
+  color: black; /* Set the text color to red */
   margin: 20px 0; /* Add some margin to create space */
   position: relative; /* Set position to relative for positioning the white square */
   display: inline-block; /* Make the h1 an inline-block to only take the width of its content */
-  line-height: 1.5; /* Adjust the line height for vertical spacing */
   padding-bottom: 0; /* Adjust the padding at the bottom for additional space */
   
 }
 
-#header .profile h1 .span-1 {
-  font-size: 100px;
-  color: black; /* Set the text color to black */
-  letter-spacing: -3px;
+#header .profile h1 span {
+  font-size: 40px;
+  color: red; /* Set the text color to black */
+  
 }
 
-#header .profile h1 .span-2 {
-  font-size: 100px;
-  color: black; /* Set the text color to black */
-  letter-spacing: -5px;
-}
-
-#header .profile h1 .span-3 {
-  font-size: 30px;
-}
 
 #header .profile h1::before {
   content: ''; /* Create a pseudo-element to represent the white square */
@@ -264,15 +254,10 @@ h6 {
   }
 
   #header .profile h1::before {
-    height: 80%; /* Set the height to cover the entire h1 element */
+    height: 100px; /* Set the height to cover the entire h1 element */
   }
 
-  #header .profile h1 .span-1,
-  #header .profile h1 .span-2 {
-    font-size: 100px;
-  }
-
-  #header .profile h1 .span-3 {
+  #header .profile h1 span{
     font-size: 40px;
   }
 }
@@ -297,7 +282,7 @@ h6 {
 
 @media (max-width: 767px) {
   #header .profile h1 {
-    font-size: 35px; /* Adjust font size for smaller screens */
+    font-size: 30px; /* Adjust font size for smaller screens */
     position: relative;
   }
 
@@ -317,17 +302,10 @@ h6 {
     align-items: center; /* Center vertically */
   }
 
-  #header .profile h1 .span-1,
-  #header .profile h1 .span-2 {
-    font-size: 48px; /* Adjust font size for smaller screens */
-  }
-
-  #header .profile h1 .span-3 {
-    font-size: 20px; /* Adjust font size for smaller screens */
+  #header .profile h1 span {
+    font-size: 18px; /* Adjust font size for smaller screens */
   }
 }
-
-
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -348,6 +326,10 @@ h6 {
   white-space: nowrap;
 }
 
+.nav-menu>ul>li>a>span {
+  font-size: 20px;
+  font-weight: 700;
+}
 .nav-menu a,
 .nav-menu a:focus {
   display: flex;
