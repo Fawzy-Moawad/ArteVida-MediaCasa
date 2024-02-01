@@ -285,13 +285,19 @@ document.addEventListener('DOMContentLoaded', function () {
   function updateContent() {
     const aboutContentEn = document.getElementById('about-content-en');
     const aboutContentEs = document.getElementById('about-content-es');
-
+    const contactContentEn = document.getElementById('contact-content-en');
+    const contactContentEs = document.getElementById('contact-content-es');
+    
     if (currentLanguage === 'en') {
       aboutContentEn.style.display = 'block';
       aboutContentEs.style.display = 'none';
+      contactContentEn.style.display = 'block';
+      contactContentEs.style.display = 'none';
     } else {
       aboutContentEn.style.display = 'none';
       aboutContentEs.style.display = 'block';
+      contactContentEn.style.display = 'none';
+      contactContentEs.style.display = 'block';
     }
   }
 
