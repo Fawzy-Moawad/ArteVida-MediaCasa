@@ -97,18 +97,24 @@ h6 {
   letter-spacing: -5px;
 }
 
+#header .profile h1 .span-3 {
+  font-size: 40px;
+}
 
 #header .profile h1::before {
   content: ''; /* Create a pseudo-element to represent the white square */
   display: block;
   width: 100%; /* Set the width to 120% of the parent element */
-  height: 120px; /* Set the height to a fixed value (adjust as needed) */
+  height: 100px; /* Set the height to a fixed value (adjust as needed) */
   background-color: rgba(255, 255, 255, 0.8); /* Set the background color to semi-transparent white */
   position: absolute; /* Set position to absolute for precise placement */
-  bottom: 0; /* Align the bottom edge with the h1 element */
+  bottom: 50%; /* Align the bottom edge with the center of the h1 element */
+  transform: translateY(50%); /* Adjust for vertical centering */
   left: 0; /* Align the left edge with the parent element */
   z-index: -1; /* Send the white square to the back, allowing the h1 text to be visible */
-  
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
 
@@ -144,6 +150,25 @@ h6 {
   padding-right: 30px;
 }
 
+@media (min-width: 768px) {
+  #header .profile h1 {
+    font-size: 80px;
+  }
+
+  #header .profile h1::before {
+    height: 80%; /* Set the height to cover the entire h1 element */
+  }
+
+  #header .profile h1 .span-1,
+  #header .profile h1 .span-2 {
+    font-size: 100px;
+  }
+
+  #header .profile h1 .span-3 {
+    font-size: 40px;
+  }
+}
+
 @media (max-width: 1199px) {
   #header {
     left: -300px;
@@ -161,16 +186,39 @@ h6 {
 }
 
 /* Adjust styles for smaller screens (mobile devices) */
+
 @media (max-width: 767px) {
   #header .profile h1 {
-    font-size: 28px; /* Adjust font size for smaller screens */
+    font-size: 35px; /* Adjust font size for smaller screens */
+    position: relative;
+  }
+
+  #header .profile h1::before {
+    content: ''; /* Create a pseudo-element to represent the white square */
+    display: block;
+    width: 100%; /* Set the width to 120% of the parent element */
+    height: 70px; /* Set the height to a fixed value (adjust as needed) */
+    background-color: rgba(255, 255, 255, 0.8); /* Set the background color to semi-transparent white */
+    position: absolute; /* Set position to absolute for precise placement */
+    bottom: 50%; /* Align the bottom edge with the center of the h1 element */
+    transform: translateY(50%); /* Adjust for vertical centering */
+    left: 0; /* Align the left edge with the parent element */
+    z-index: -1; /* Send the white square to the back, allowing the h1 text to be visible */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
   }
 
   #header .profile h1 .span-1,
   #header .profile h1 .span-2 {
     font-size: 48px; /* Adjust font size for smaller screens */
   }
+
+  #header .profile h1 .span-3 {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
 }
+
 
 
 /*--------------------------------------------------------------
