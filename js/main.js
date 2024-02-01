@@ -275,3 +275,35 @@
   }
 
 })();
+
+/*language*/
+
+// Added the following code to handle language toggle
+document.addEventListener('DOMContentLoaded', function () {
+  let currentLanguage = 'es'; // Set 'es' as the default language
+
+  function updateContent() {
+    const aboutContentEn = document.getElementById('about-content-en');
+    const aboutContentEs = document.getElementById('about-content-es');
+
+    if (currentLanguage === 'en') {
+      aboutContentEn.style.display = 'block';
+      aboutContentEs.style.display = 'none';
+    } else {
+      aboutContentEn.style.display = 'none';
+      aboutContentEs.style.display = 'block';
+    }
+  }
+
+  function toggleLanguage() {
+    currentLanguage = currentLanguage === 'es' ? 'en' : 'es';
+    updateContent();
+  }
+
+  const languageToggle = document.getElementById('button-16'); // Adjusted the ID
+  if (languageToggle) {
+    languageToggle.addEventListener('change', toggleLanguage);
+  }
+
+  updateContent();
+});
